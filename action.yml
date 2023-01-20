@@ -1,0 +1,23 @@
+name: PEW Format build name
+description: GitHub action to format a standardized PEW build artifact name
+
+inputs:
+  template:
+    description: Artifact name template
+    required: true
+    type: string
+  build-configuration:
+    description: Configuration for the build
+    type: string
+    required: true
+  platform:
+    description: Platform name for the build
+    type: string
+    required: true
+outputs:
+  name:
+    description: Formatted artifact name
+
+runs:
+  using: node16
+  main: dist/index.js
